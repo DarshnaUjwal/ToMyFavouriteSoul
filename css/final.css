@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e8d5f7, #f3e8ff);
+    font-family: 'Cedarville Cursive', cursive;
+    color: #4b2a74;
+    overflow-x: hidden;
+  }
+  
+  #envelope {
+    margin: 120px auto; /* Adjusted margin for better centering */
+    width: 300px; /* Increased width for a bigger envelope */
+    height: 250px; /* Increased height for a bigger envelope */
+    background: #d3a4f0;
+    border-radius: 20px; /* Slightly rounded corners for a softer look */
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow for more depth */
+    animation: float 3s ease-in-out infinite;
+    cursor: pointer;
+    z-index: 2; /* Ensures the envelope stays on top */
+  }
+  
+  #envelope::before {
+    content: "💌";
+    font-size: 4rem; /* Increased the emoji size for better visibility */
+    position: absolute;
+    top: 35%; /* Adjusted to keep the emoji centered */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); } /* Slightly deeper float for a more graceful effect */
+    100% { transform: translateY(0px); }
+  }
+  
+  #letter-container {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  #letter-container.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  #letter-text p {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  #photo-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+    opacity: 0;
+    transition: opacity 2s ease;
+  }
+  
+  #photo-section.show {
+    opacity: 1;
+  }
+  
+  #photo-section img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .petal {
+    position: fixed;
+    top: -10px;
+    color: #d69df0;
+    font-size: 20px;
+    animation: fall 8s linear infinite;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  

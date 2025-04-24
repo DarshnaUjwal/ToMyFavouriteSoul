@@ -1,0 +1,310 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top left, #ffe5ec, #f9f3f3);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #6d4c41;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .teaser {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #d6336c;
+    margin-bottom: 1.5rem;
+  }
+  
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .countdown div {
+    background: #fff0f6;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .countdown small {
+    display: block;
+    font-weight: normal;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #a6777a;
+  }
+  
+  .footer {
+    margin-top: 2rem;
+    font-style: italic;
+    color: #a05260;
+    font-size: 1rem;
+  }
+  .petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .petal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('../assets/images/petal.png') no-repeat center/contain;
+    animation: fall linear infinite;
+    opacity: 0.8;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-10%) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  .welcome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #fff0f5, #ffe4ec);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .welcome.visible {
+    opacity: 1;
+    display: flex;
+  }
+  
+  .welcome-content {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  
+  .welcome-content h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #e94b8e;
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-content p {
+    font-size: 1.2rem;
+    color: #6d4c41;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    line-height: 1.6;
+  }
+  
+  .welcome-content button {
+    padding: 0.8rem 1.6rem;
+    background-color: #ff92ac;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .welcome-content button:hover {
+    background-color: #e94b8e;
+  }
+  
+  .garden-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+  .garden-body {
+    background: linear-gradient(to top right, #ffe5f0, #fdf1f5);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .garden-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #e94b8e;
+    margin-bottom: 0.5rem;
+}
+  
+.garden-subtitle {
+  color: #6d4c41;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+  
+.garden-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Ensure a flexible grid layout */
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.flower {
+  background: #ffe8f1;
+  border-radius: 50%;
+  padding: 1.2rem 0.6rem; /* Adjust padding here to control the oval shape */
+  font-size: 1.1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 192, 203, 0.4);
+  position: relative;
+  width: 80px; /* Fixed width */
+  height: 80px; /* Fixed height */
+}
+
+  
+  .flower-text {
+    font-family: 'Poppins', sans-serif;
+    color: #e94b8e;
+    line-height: 1.3;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  
+  .flower.bloomed:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 16px rgba(255, 182, 193, 0.6);
+  }
+  
+  .flower.locked {
+    background: #f4d9e4;
+    color: #aaa;
+    box-shadow: none;
+    cursor: default;
+  }
+  
+  .note-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 245, 250, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .note-content {
+    max-width: 500px;
+    font-family: 'Poppins', sans-serif;
+    color: #6d4c41;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    position: relative;
+  }
+  .note-content button {
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.4rem;
+    background-color: #e94b8e;
+    color: #fff;
+    border: none;
+    border-radius: 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .note-content button:hover {
+    background-color: #d6336c;
+  }
+  
+  .flower {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-in forwards;
+  }
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  @keyframes fadeIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  @media (max-width: 400px) {
+    .flower {
+      width: 60px; /* Smaller width on smaller screens */
+      height: 60px; /* Smaller height on smaller screens */
+      padding: 0.8rem 0.4rem; /* Adjust padding for better fit */
+    }
+  }
+
+  #final-surprise-button-container {
+    margin-top: 2rem;
+    text-align: center;
+    display: none;
+    margin-left: 20px;
+  }
+  
+  #final-surprise-button {
+    padding: 1rem 2rem;
+    background-color: #e94b8e;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  #final-surprise-button:hover {
+    background-color: #d6336c;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  #final-surprise-button:active {
+    background-color: #c13563;
+  }
+  
+  @media (max-width: 600px) {
+    #final-surprise-button {
+      padding: 0.8rem 1.6rem;
+      font-size: 1rem;
+    }
+  }
+  

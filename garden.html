@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Blooming Garden</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/garden.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body class="garden-body">
+  <div class="petals"></div>
+
+  <!-- Title and Subtitle with separate lines -->
+  <div class="garden-header">
+    <h1 class="garden-title">To My Favourite Soul 💖</h1>
+    <p class="garden-subtitle">One flower blooms each day — unlocking memories and love 🌸</p>
+  </div>
+
+  <div class="garden-grid" id="garden-grid">
+    <!-- Flowers will appear here via JS -->
+  </div>
+
+  <div class="note-popup" id="note-popup" style="display: none;">
+    <div class="note-content">
+      <span id="note-text"></span>
+      <button onclick="closeNote()">Close</button>
+    </div>
+  </div>
+
+  <!-- Go to Final Surprise Button (initially hidden) -->
+  <div id="final-surprise-button-container" style="display: none;">
+    <button id="final-surprise-button" onclick="window.location.href='final.html'">Go to Final Surprise 💌</button>
+  </div>
+
+  <div id="garden-wrapper">
+    <div id="garden-grid"></div>
+  </div>  
+
+  <audio id="bg2-music" autoplay loop>
+    <source src="assets/perfect.mp3" type="audio/mp3" />
+  </audio>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Check if today's date is May 18 or later
+      const currentDate = new Date();
+      const finalDate = new Date("2025-05-18");
+
+      if (currentDate >= finalDate) {
+        document.getElementById("final-surprise-button-container").style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>

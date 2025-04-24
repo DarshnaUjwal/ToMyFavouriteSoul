@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To My Favourite Soul 💌</title>
+  <link rel="stylesheet" href="css/final.css" />
+</head>
+<body>
+  <!-- Floating petals container -->
+  <div class="petals"></div>
+
+  <!-- Envelope animation section -->
+  <div class="envelope-container" id="envelope" title="Click to open your letter">
+    <div class="envelope">
+      <div class="top-flap"></div>
+      <div class="body"></div>
+      <div class="heart">💜</div>
+    </div>
+    <p class="click-note">Click to open your letter</p>
+  </div>
+
+  <!-- Hidden letter and photo memory section -->
+  <div class="letter-section" id="letter-container">
+    <div class="letter-content" id="letter-text">
+      <p>My Love,</p>
+      <p>
+        Today, as every petal in this virtual garden blooms just for you, I want you to know how endlessly you are loved.
+        From the very first time our hearts met, something in me knew—this was the beginning of forever.
+      </p>
+      <p>
+        You’ve been the calm in my chaos, the laughter in my silence, the warmth in my distance.
+        Through every call, every late-night whisper, every moment apart—you’ve made me feel close, held, and whole.
+        You've given my heart a home it never knew it was searching for.
+      </p>
+      <p>
+        Loving you has been the softest joy. The kind that wraps around your soul, quietly and endlessly.
+        I treasure every second with you—our shared dreams, our inside jokes, the way your voice wraps around my name like a melody.
+      </p>
+      <p>
+        As you turn a year older today, I just want to say: I’ll be right here, always.
+        Cheering for you, believing in you, loving you—with all that I am.
+        This love story is my favorite, and I can't wait for all the chapters still to come.
+      </p>
+      <p>Happy Birthday Neeshie. 💜</p>
+      <p style="text-align: right;">
+        Forever yours,<br>
+        Your Darshu 🌸
+      </p>
+    </div>
+
+    <!-- Photo memory section, hidden at first -->
+    <div class="photo-section" id="photo-section">
+      <img src="assets/images/pic1.jpg" alt="Memory 1" />
+      <img src="assets/images/pic2.jpg" alt="Memory 2" />
+      <img src="assets/images/pic3.jpg" alt="Memory 3" />
+      <img src="assets/images/pic4.jpg" alt="Memory 4" />
+      <img src="assets/images/pic5.jpg" alt="Memory 5" />
+    </div>
+
+    <!-- Back to Garden button -->
+    <div class="back-button hidden" id="back-button">
+      <a href="garden.html">🌸 Back to the Garden</a>
+    </div>
+  </div>
+
+  <!-- Background music with autoplay support -->
+  <audio id="bg3-music" loop src="assets/blue.mp3"></audio>
+
+  <!-- Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const envelope = document.getElementById("envelope");
+      const letter = document.getElementById("letter-container");
+      const photoSection = document.getElementById("photo-section");
+      const backButton = document.getElementById("back-button");
+      const music = document.getElementById("bg3-music");
+
+
+      // Floating petals
+      function createPetal() {
+        const petal = document.createElement("div");
+        petal.className = "petal";
+        petal.innerText = "🌸";
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.fontSize = 16 + Math.random() * 10 + "px";
+        document.body.appendChild(petal);
+        setTimeout(() => petal.remove(), 8000);
+      }
+      setInterval(createPetal, 500);
+
+      // Handle envelope click to reveal letter
+      envelope.addEventListener("click", () => {
+        envelope.style.display = "none";
+        letter.classList.add("show");
+        setTimeout(() => {
+          photoSection.classList.add("show");
+          backButton.classList.add("show");
+        }, 2000);
+
+        // Try playing audio on interaction
+        music.play().catch(() => {
+          // In case autoplay fails silently
+          console.log("Autoplay blocked, user interaction required.");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

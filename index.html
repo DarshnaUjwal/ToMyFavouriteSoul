@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To My Favourite Soul</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/countdown.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="petals"></div>
+  <div class="container">
+    <h1 class="teaser">Something beautiful is blooming just for you… 🌸</h1>
+    <div class="countdown" id="countdown">
+      <div><span id="days">00</span><small>days</small></div>
+      <div><span id="hours">00</span><small>hours</small></div>
+      <div><span id="minutes">00</span><small>mins</small></div>
+      <div><span id="seconds">00</span><small>secs</small></div>
+    </div>
+    <p class="footer">Stay close… April 28th is our bloom day 🌷</p>
+  </div>
+
+  <div class="welcome" style="display: none;">
+    <div class="welcome-content">
+      <h1>Welcome, my love 💖</h1>
+      <p>Today begins a journey of blooming memories. One petal, one moment, one heartbeat at a time. 🌸</p>
+      <button onclick="goToGarden()">Take me to the garden 🌼</button>
+    </div>
+  </div>
+  
+
+  <audio id="bg-music" autoplay loop>
+    <source src="assets/night_changes.mp3" type="audio/mp3" />
+    Your browser does not support the audio element.
+  </audio>
+  
+  <button id="start-btn" style="display: none;">Start</button>
+
+</body>
+</html>
