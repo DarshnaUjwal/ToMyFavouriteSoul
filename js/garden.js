@@ -60,7 +60,7 @@ window.onload = () => {
   }
 
   // Show "Go to Final Surprise" button after May 18
-  const finalSurpriseDate = new Date("2025-05-18");
+  const finalSurpriseDate = new Date("2025-05-17");
   const currentDate = new Date();
   if (currentDate >= finalSurpriseDate) {
     const buttonContainer = document.getElementById("final-surprise-button-container");
